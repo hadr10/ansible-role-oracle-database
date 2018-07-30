@@ -1,4 +1,4 @@
----
+"---
 - include_vars: "oracle-database.yml"
 
 - name: install required libraries
@@ -18,7 +18,7 @@
     name: "{{ item.key }}"
     value: "{{ item.value }}"
     state: present
-  with_dict: oracle_database_kernel_params
+  with_dict: "{{ oracle_database_kernel_params }}"
 
 - name: create groups
   group: name={{ oracle_database_install_group }} state=present
